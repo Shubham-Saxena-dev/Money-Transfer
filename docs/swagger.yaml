@@ -1,0 +1,53 @@
+swagger: "2.0"
+info:
+  title: "Transfer API"
+  version: "1.0.0"
+  description: "API to transfer money between accounts"
+  contact: {}
+
+paths:
+  /transfer:
+    post:
+      summary: "Transfer money between accounts"
+      description: "Endpoint to transfer money between accounts"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: Transfer request payload
+          required: true
+          schema:
+            $ref: "#/definitions/TransferRequest"
+      responses:
+        '201':
+          description: "Created"
+          schema:
+            $ref: "#/definitions/TransferResponse"
+        '400':
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/Error"
+        '422':
+          description: "Unprocessable Entity"
+          schema:
+            $ref: "#/definitions/Error"
+
+definitions:
+  TransferRequest:
+    type: object
+    properties:
+
+  TransferResponse:
+    type: object
+    properties:
+      message:
+        type: string
+
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
