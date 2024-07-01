@@ -20,9 +20,9 @@ Requests can be made to the server using the following curl command:
 curl --location 'http://localhost:8080/transfer' \
 --header 'Content-Type: application/json' \
 --data '{
-  "organization_name": "ACME Corp",
-  "organization_bic": "OIVUSCLQXXX",
-  "organization_iban": "FR10474608000002006107XXXXX",
+  "organization_name": "My corp",
+  "organization_bic": "BIC1234",
+  "organization_iban": "ABCD1234XX5678",
   "credit_transfers": [
     {
       "amount": "14.5",
@@ -30,20 +30,6 @@ curl --location 'http://localhost:8080/transfer' \
       "counterparty_bic": "CRLYFRPPTOU",
       "counterparty_iban": "EE383680981021245685",
       "description": "Wonderland/4410"
-    },
-    {
-      "amount": "61238",
-      "counterparty_name": "Wile E Coyote",
-      "counterparty_bic": "ZDRPLBQI",
-      "counterparty_iban": "DE9935420810036209081725212",
-      "description": "//TeslaMotors/Invoice/12"
-    },
-    {
-      "amount": "999",
-      "counterparty_name": "Bugs Bunny",
-      "counterparty_bic": "RNJZNTMC",
-      "counterparty_iban": "FR0010009380540930414023042",
-      "description": "2020 09 24/2020 09 25/GoldenCarrot/"
     }
   ]
 }
